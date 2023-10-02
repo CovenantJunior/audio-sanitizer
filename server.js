@@ -5,7 +5,7 @@ const upload = multer({ dest: 'audios/' });
 const path = require('path');
 const port = 3000;
 const fs = require('fs');
-const speech = require('@google-cloud/speech');
+// const speech = require('@google-cloud/speech');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
@@ -18,7 +18,7 @@ ffmpeg.setFfmpegPath(ffmpegPath);
  *  3. Make sure you have the necessary permission to list storage buckets "storage.buckets.list"
  *    (https://cloud.google.com/storage/docs/access-control/iam-permissions#bucket_permissions)
  */
-// const projectId = 'YOUR_PROJECT_ID';
+/* const projectId = 'apt-index-386323';
 
 const {Storage} = require('@google-cloud/storage');
 
@@ -40,7 +40,7 @@ async function authenticateImplicitWithAdc() {
   console.log('Listed all storage buckets.');
 }
 
-authenticateImplicitWithAdc();
+authenticateImplicitWithAdc(); */
 
 
 app.use(express.static(path.join(__dirname, 'public')));
