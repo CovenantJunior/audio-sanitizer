@@ -6,7 +6,9 @@ const path = require('path');
 const port = 3000;
 const fs = require('fs');
 const speech = require('@google-cloud/speech');
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -59,7 +61,7 @@ app.post('/censor', upload.single('audio'), (req, res) => {
                 .join('\n');
             
             // Check for curse words in the transcription
-            let curseWords = ["badword1", "badword2", "badword3"];
+            let curseWords = ["fuck", "kill", "gun", "rape", "blood", "die", "gore", "war"];
             let words = transcription.split(' ');
             
             for (let word of words) {
