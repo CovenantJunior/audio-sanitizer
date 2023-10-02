@@ -67,7 +67,7 @@ app.post('/censor', upload.single('audio'), (req, res) => {
             // The audio file is now mono channel and in .flac format
 
             // Creates a client
-            const client = new speech.SpeechClient();
+            // const client = new speech.SpeechClient();
 
             // Reads a local audio file and converts it to base64
             const file = fs.readFileSync('outputs/output.flac');
