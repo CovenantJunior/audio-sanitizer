@@ -7,7 +7,6 @@ const port = 3000;
 const fs = require('fs');
 const speech = require('@google-cloud/speech');
 const ffmpeg = require('fluent-ffmpeg');
-const censor = require('./censor');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
