@@ -20,7 +20,7 @@ app.post('/censor', upload.single('audio'), (req, res) => {
     // req.body will hold the text fields, if there were any
 
     // Path to the audio file
-    let filePath = file.path;
+    let filePath = req.file.path;
 
     // Convert audio file to mono channel and save as .flac
     ffmpeg(filePath)
