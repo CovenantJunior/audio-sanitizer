@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Censor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Audio Censor</h1>
+    <p>Please upload an audio file:</p>
+    <input type="file" id="audioFile" accept="audio/*" aria-label="Upload an audio file">
+    <button onclick="processAudio()">Upload</button>
+
+    <script>
+        async function processAudio() {
+            var audioFile = document.getElementById('audioFile').files[0];
+            if (audioFile) {
+                // Create a FormData object and append the audio file
+                var formData = new FormData();
+                formData.append('audio', audioFile);
+
+                // Send the audio file to the server for processing
+                var response = await fetch('/censor', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    console.log("Audio file uploaded and processed successfully.");
+                } else {
+                    console.log("Error uploading and processing audio file.");
+                }
+            } else {
+                console.log("No audio file selected.");
+            }
+        }
+    </script>
+</body>
+</html>
