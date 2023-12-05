@@ -19,7 +19,7 @@ const modelUrl = 'https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3
 const scorerPath = 'https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer'; // Replace with the actual path
 
 // Create a DeepSpeech model
-const model = new DeepSpeech.Model(modelurl);
+const model = new DeepSpeech.Model(modelUrl);
 
 
 /**
